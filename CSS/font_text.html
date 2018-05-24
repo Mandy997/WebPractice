@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS属性，字体属性和文本属性</title>
+    <style type="text/css">
+        label {
+            /* 文字大小是周围文字大小的两倍 */
+            font-size: 200%;
+        }
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        p {
+            width: 400px;
+            line-height: 30px;
+            /*行高*/
+            font-size: 20px;
+            /*字体大小 */
+            font-family: "Times New Roman", "微软雅黑", "宋体";
+            /*字体类型，如果没有幼圆就显示黑体 */
+            font-weight: bold;
+            /* 粗体，属性值写成bolder也可以 */
+            font-variant: small-caps;
+            /* 大写变小写  */
+            padding-top: 75px;
+        }
+        
+        .text_center {
+            height: 300px;
+            border: red 1px;
+        }
+        
+        ul {
+            /*去掉前面的原点 */
+            list-style: none;
+            width: 420px;
+            height: 60px;
+            background-color: black;
+        }
+        
+        ul li {
+            float: left;
+            margin-right: 15px;
+            margin-left: 15px;
+            margin-top: 16px;
+        }
+        
+        a {
+            /* 去掉超链接的下划线 */
+            text-decoration: none;
+            font-size: 20px;
+            color: #BBBBBB;
+            font-family: 微软雅黑;
+        }
+    </style>
+</head>
+
+<body>
+    <div>可能完美和完整<label>清风徐来，水波不兴</label>这啥玩意</div>
+    <div class="text_center">
+        <p>清风徐来，水波不兴清风徐来，水波不兴清风徐来， 清风徐来，水波不兴清风徐来，水波不兴清风徐来，水波不兴清风徐来，水波不兴 水波不兴清风徐来，水波不兴清风徐来，水波不兴 </p>
+    </div>
+    <div>
+        <ul>
+            <li><a href="">博客园</a></li>
+            <li><a href="">新随笔</a></li>
+            <li><a href="">联系</a></li>
+            <li><a href="">订阅</a></li>
+            <li><a href="">管理</a></li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
