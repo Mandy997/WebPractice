@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>博雅互动demo</title>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        body {
+            font-size: 14px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            height: 8888px;
+        }
+        
+        .header {
+            height: 58px;
+            background-color: black;
+        }
+        /* 版心 */
+        
+        .inner_c {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header .logo {
+            float: left;
+            margin-right: 40px;
+        }
+        
+        .header .nav {
+            float: left;
+        }
+        
+        .header .nav ul {
+            list-style: none;
+        }
+        
+        .header .nav ul li {
+            float: left;
+            width: 100px;
+            line-height: 58px;
+            /* 让行高等于这一行的高度，保证文字垂直居中 */
+            border-left: 1px solid #252947;
+        }
+        
+        .header .nav ul li .last {
+            border-right: 1px solid #252947;
+        }
+        
+        .header .nav ul li a {
+            display: block;
+            /* 将超链接转为块，可以保证其霸占父亲整行 */
+            height: 58px;
+            text-decoration: none;
+            color: dimgrey;
+            text-align: center;
+        }
+        
+        .header .nav ul li a.current {
+            color: aliceblue;
+            background: #252947;
+        }
+        
+        .header .nav ul li a:hover {
+            color: aliceblue;
+            background: #252947;
+        }
+        
+        .header .jrwm_box {
+            float: left;
+            height: 58px;
+            width: 100px;
+            padding-left: 48px;
+            padding-top: 12px;
+        }
+        /*放背景图片的div*/
+        
+        .header .jrwm_box .jrwm {
+            height: 34px;
+            background-image: url(http://www.boyaa.com/images/jrwm.png);
+            background-repeat: no-repeat;
+            text-align: center;
+            /*让这个div内部的超链接居中*/
+        }
+        
+        .header .jrwm_box .jrwm a {
+            display: block;
+            /*将超链接转为块儿，可以保证其霸占父亲的整行*/
+            line-height: 34px;
+            /*让行高为背景图片的高度，可以保证超链接的文字在背景图片里垂直居中*/
+            text-decoration: none;
+            /*去掉超链的下划线*/
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="inner_c">
+            <div class="logo">
+                <img src="http://www.boyaa.com/images/logo.png" alt="">
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#" class="current">首页</a></li>
+                    <li><a href="#">博雅游戏</a></li>
+                    <li><a href="#">博雅新闻</a></li>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">客服中心</a></li>
+                    <li class="last"><a href="#">投资者关系</a></li>
+                </ul>
+            </div>
+            <div class="jrwo_box">
+                <div class="jrwm">
+                    <a href="https://www/baidu.com/" target="_blank">加入我们</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
