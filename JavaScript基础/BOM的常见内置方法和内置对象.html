@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM的常见内置方法和内置对象</title>
+</head>
+
+<body>
+    <a href="javascript:;">点击我打开另一个页面</a>
+    <a href="#">点击我关闭本页面</a>
+    <script>
+        var a1 = document.getElementsByTagName("a")[0];
+        var a2 = document.getElementsByTagName("a")[1];
+        a1.onclick = function() {
+                var json = {
+                    "name": "helloworld",
+                    "fullscreen": "no",
+                    "location": "no",
+                    "width": "100px",
+                    "height": "100px",
+                    "top": "100px",
+                    "left": "100px"
+                }
+                var newWin = window.open("http://www.baidu.com", "_blank", json);
+                newWin.moveTo(500, 500);
+                newWin.resizeTo(1000, 1000);
+            }
+            // 关闭本页面
+        a2.onclick = function() {
+            window.close();
+        }
+        console.log(navigator.userAgent);
+        console.log(navigator.platform);
+    </script>
+</body>
+
+</html>
