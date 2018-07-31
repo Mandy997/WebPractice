@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./../vue.js"></script>
+</head>
+
+<body>
+    <p>挂载点、模板、实例之间的关系
+    </p>
+    <div id="root">
+        <div @click="handleClick">
+            {{content}}
+        </div>
+    </div>
+
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                msg: "hello word",
+                content: 'hello'
+            },
+            methods: {
+                handleClick: function() {
+                    alert("hello");
+                    this.content = 'word'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
