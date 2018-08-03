@@ -1,0 +1,154 @@
+/* 基础样式 */
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    min-height: 20rem;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #ebedee;
+    letter-spacing: 1px;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #14c189;
+    text-decoration: none;
+    outline: 0;
+}
+
+
+/* 页面布局框架样式 */
+
+.flex-row {
+    display: flex;
+    /* 排列方向 */
+    flex-direction: row;
+    /*  如何换行 */
+    flex-wrap: nowrap;
+    /* 交叉轴如何对其 */
+    align-items: center;
+}
+
+.navigate {
+    background-color: #fff;
+    height: 3rem;
+}
+
+.integral {
+    background-color: #14c189;
+    height: 10rem;
+}
+
+.content {
+    position: relative;
+    z-index: 111;
+    top: -3rem;
+}
+
+.citem {
+    background: #fdffff;
+    width: 83%;
+    margin: 0 auto;
+    padding: 0.8rem 1rem;
+}
+
+section {
+    margin-bottom: 1rem;
+}
+
+
+/* 局部样式 */
+
+.nav-arrows {
+    position: absolute;
+    top: 0.5rem;
+    width: 2rem;
+    left: .5rem;
+}
+
+.nav-name {
+    font-size: 1.3rem;
+    color: #000;
+    display: block;
+    text-align: center;
+    line-height: 2.3;
+}
+
+.integral>.imy,
+.integral>.irule {
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.imy strong {
+    font-size: 1.8rem;
+    position: relative;
+    top: .2rem;
+}
+
+.irule img {
+    width: 1.3rem;
+    position: relative;
+    top: 0.2rem;
+}
+
+
+/* 保险项目 */
+
+.item-img {
+    width: 4.7rem;
+    margin-right: 0.6rem;
+    position: relative;
+    text-align: center;
+}
+
+.item-text {
+    width: 50%;
+}
+
+.item-operation {
+    width: 5rem;
+    text-align: right;
+}
+
+.item-img>img {
+    width: 3.4rem;
+    border-radius: 50%;
+    padding: .1rem;
+    border: 1px solid #424446;
+}
+
+.item-text>.title {
+    font-size: 1.3rem;
+    margin-bottom: 0.1rem;
+}
+
+.item-text>.describe {
+    color: #979799;
+}
+
+.add-integral {
+    display: block;
+}
