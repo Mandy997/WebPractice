@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中的样式绑定</title>
+    <script src="./../vue.js"></script>
+    <style>
+        .activated {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- activated:样式名，isActivated:变量名 -->
+        <div @click="handleDivOneClick" :class="{activated:isActivated}">
+            {{message}}
+        </div>
+
+        <!-- activatedTwo 变量名 -->
+        <div @click="handleDivTwoClick" :class="[activatedTwo]">
+            Hello World
+        </div>
+
+        <div @click="handDivThreeClick" :style="[styleObj,{fontSize:'20px'}]">
+            啦啦啦啦啦啦啦啦啦啦
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "样式绑定",
+                isActivated: false,
+                activatedTwo: '',
+                styleObj: {
+                    color: 'black'
+                }
+            },
+            methods: {
+                handleDivOneClick: function() {
+                    this.isActivated = !this.isActivated;
+                },
+                handleDivTwoClick: function() {
+                    this.activatedTwo === "activated" ? this.activatedTwo = '' : this.activatedTwo = 'activated'
+                },
+                handDivThreeClick: function() {
+                    this.styleObj.color = this.styleObj.color === "black" ? 'red' : 'black'
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
