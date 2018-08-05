@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue的生命周期钩子函数</title>
+    <script src="./../vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+    <script>
+        // 生命周期函数就是vue实例在某一个时间点会自动执行的函数
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: 'hello word'
+            },
+            // 组件创建前
+            beforeCreate() {
+                console.log("beforeCreat")
+            },
+            // 组件创建后
+            created: function() {
+                console.log("created");
+            },
+            // 模板挂载之前
+            beforeMount() {
+                console.log("模板挂载前，beforeMount");
+                console.log(this.$el);
+            },
+            // 模板挂载后
+            mounted() {
+                console.log("模板以挂载，数据被渲染,mounted")
+                console.log(this.$el);
+            },
+            //  组件实例被销毁
+            beforeDestroy() {
+                console.log("组件实例被销毁前");
+            },
+            // 组件实例销毁后
+            destroyed() {
+                console.log("实例被销毁了")
+            },
+            // 数据发生改变，还没被重新渲染前
+            beforeUpdate() {
+                console.log("beforeUpdate,数据发生改变，还没被重新渲染前");
+            },
+            updated() {
+                console.log("数据改变后，Update")
+            },
+        })
+    </script>
+
+</body>
+
+</html>
