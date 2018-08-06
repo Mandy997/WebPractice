@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件类型校验与非Props特性</title>
+    <script src="./../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <child :count-one="123" :count-two="'hello word'"></child>
+    </div>
+
+    <script>
+        Vue.component('child', {
+            // Props特性，父组件传，子组件接，子组件可用传过来的属性，
+            // 非Props特性，父组件传，子组件不接，属性会显示在子组件的最外层节点中，不可使用传过了的属性。
+            props: {
+                countOne: [Number, String],
+                countTwo: {
+                    type: String,
+                    required: false,
+                    default: 'defoult value',
+                    validator: function(value) {
+                        return (value.length > 5);
+                    }
+                }
+
+            },
+            template: '<div>{{countOne}}--{{countTwo}}</div>'
+        });
+
+        var vm = new Vue({
+            el: '#root'
+        })
+    </script>
+</body>
+
+</html>

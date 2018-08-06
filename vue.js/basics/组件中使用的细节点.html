@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件中使用的细节点</title>
+    <script src="./../vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div ref="hello" @click="handleClick">
+            hello word
+        </div>
+        <!-- ref 写在div中  获取到的是html
+        写在子组件中，获取的是子组件 -->
+
+        <!-- 计数器 -->
+        <counter ref="one" @change="handleNumberChange"></counter>
+        <counter ref="two" @change="handleNumberChange"></counter>
+        <div>{{total}}</div>
+    </div>
+
+    <script>
+        Vue.component('counter', {
+            template: '<div @click="handleNumberClick">{{number}}</div>',
+            data: function() {
+                return {
+                    number: 0
+                }
+            },
+            methods: {
+                handleNumberClick: function() {
+                    this.number++;
+                    this.$emit('change');
+                }
+            }
+        })
+
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                total: 0
+            },
+            methods: {
+                handleClick: function() {
+                    console.log(this.$refs.hello);
+                    alert(this.$refs.hello.innerHTML);
+                },
+                handleNumberChange: function() {
+                    // 获取子组建
+                    console.log(this.$refs.one.number);
+                    console.log(this.$refs.two.number);
+
+                    this.total = this.$refs.one.number + this.$refs.two.number;
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
