@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>非父子组件传值(Bus/总线/发布订阅模式/观察者模式)</title>
+    <script src="./../vue.js"></script>
+</head>
+
+<body>
+    <!-- 使用总线机制传值 -->
+    <div id="root">
+        <!-- 兄弟组件传值 -->
+        <chlid content="Tina"></chlid>
+        <chlid content="Chunle"></chlid>
+    </div>
+    <script>
+        // 在Vue的实例上挂载了一个bus属性
+        Vue.prototype.bus = new Vue();
+        Vue.component('chlid', {
+            props: {
+                content: String,
+            },
+            data: function() {
+                return {
+                    selfContent: this.content
+                }
+            },
+            template: '<div @click="handleClick">{{selfContent}}</div>',
+            methods: {
+                handleClick: function() {
+                    this.bus.$emit('change', this.selfContent)
+                }
+            },
+            // 模板挂载后
+            mounted() {
+                var _this = this;
+                // 监听组件事件
+                this.bus.$on('change', function(msg) {
+                    _this.selfContent = msg;
+                })
+            },
+        });
+        var vm = new Vue({
+            el: '#root'
+        })
+    </script>
+</body>
+
+</html>

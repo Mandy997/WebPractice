@@ -29,6 +29,7 @@
             methods: {
                 handleClick: function() {
                     this.number += 2;
+                    // 子组件通过方法的形式向父主键传值
                     this.$emit('change', 2)
                 }
             }
