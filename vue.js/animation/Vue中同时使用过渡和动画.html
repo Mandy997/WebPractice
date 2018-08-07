@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中使用animate.css库</title>
+    <script src="./../vue.js"></script>
+    <!-- 这是一个CSS3动画库 animate.css -->
+    <link rel="stylesheet" href="./../animate.css">
+    <style>
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* 活动时 */
+        /* 显示时 */
+        
+        .active {
+            transform-origin: left center;
+            animation: bounce-in 1s;
+        }
+        /* 隐藏时 */
+        
+        .leave {
+            transform-origin: left center;
+            animation: bounce-in 1s reverse;
+        }
+        /* 显示与隐藏 */
+        
+        .fade-enter,
+        .fade-leave-to {
+            opacity: 0;
+        }
+        
+        .fade-enter-active,
+        .fade-leave-active {
+            transition: opacity 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <p>Vue 通过在某一时刻在代码中添加某些样式实现动画效果</p>
+        <p>通过enter-active-class 自定义css样式名</p>
+        <p>解决第一次没有动画的问题：添加 appear 和appear-active-class</p>
+        <p>使用 type="transition" 作为动画的总时常</p>
+        <p>使用:duration 自定义时长</p>
+        <p>动画特效 5-3中讲的</p>
+        <transition :duration="{enter:5000,leave:10000}" type="transition" name="fade" appear enter-active-class="animated swing fade-enter-active" leave-active-class="animated shake fade-leave-active" appear-active-class="animated swing">
+            <div v-if="show">helo world</div>
+        </transition>
+
+        <button @click="handleClick">切换</button>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#root',
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function() {
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

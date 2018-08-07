@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中使用animate.css库</title>
+    <script src="./../vue.js"></script>
+    <!-- 这是一个CSS3动画库 animate.css -->
+    <link rel="stylesheet" href="./../animate.css">
+    <style>
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* 活动时 */
+        /* 显示时 */
+        
+        .active {
+            transform-origin: left center;
+            animation: bounce-in 1s;
+        }
+        /* 隐藏时 */
+        
+        .leave {
+            transform-origin: left center;
+            animation: bounce-in 1s reverse;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <p>Vue 通过在某一时刻在代码中添加某些样式实现动画效果</p>
+        <p>通过enter-active-class 自定义css样式名</p>
+        <transition name="fade" enter-active-class="animated swing" leave-active-class="animated shake">
+            <div v-if="show">helo world</div>
+        </transition>
+
+        <button @click="handleClick">切换</button>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#root',
+            data: {
+                show: true
+            },
+            methods: {
+                handleClick: function() {
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
