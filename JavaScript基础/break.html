@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Brerk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <script>
+        outerloop:
+            for (var i = 0; i < 10; i++) {
+                console.log('刘红红挺傻的。。' + i);
+                innerloop:
+                    for (var j = 0; j < 10; j++) {
+                        if (j > 3) {
+                            console.log("innerloop会执行四次" + j);
+                            break;
+                        }
+                        if (i == 2) {
+                            break innerloop;
+                        }
+                        if (i == 4) {
+                            console.log("i会执行四次把" + i);
+                            break outerloop;
+                        }
+                        document.writeln("i=" + i + "    ,j=" + j + "<br>");
+                    }
+            }
+    </script>
+</body>
+
+</html>
