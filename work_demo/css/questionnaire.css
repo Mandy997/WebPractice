@@ -1,0 +1,63 @@
+/* 基础样式 */
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    height: 100%;
+    min-height: 20rem;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #ebedee;
+    letter-spacing: 1px;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #14c189;
+    text-decoration: none;
+    outline: 0;
+}
+
+
+/* 页面布局框架样式 */
+
+.content {
+    margin: 2rem 3rem;
+}
+
+
+/* 局部样式 */
+
+.btn {
+    text-align: center;
+}
+
+.btn>.lipin {
+    width: 60%;
+    background: #14c189;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+}
+
+.lipin>a {
+    color: #fff;
+    height: 2rem;
+}
