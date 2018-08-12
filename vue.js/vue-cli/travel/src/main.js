@@ -11,6 +11,8 @@ import './assets/style/border.css'
 
 // 移动端300ms 点击事件延迟解决方案，使用fastclick 库
 import fastClick from 'fastclick'
+
+import store from './store'
 // 与模块系统一起使用时，必须通过Vue.use（）显式安装路由器
 Vue.use(VueRouter);
 
@@ -25,5 +27,6 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     router: router,
-    render: h => h(App),
+    store,
+    render: h => h(App)
 })
